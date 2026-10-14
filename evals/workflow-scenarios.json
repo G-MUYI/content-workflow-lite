@@ -1,0 +1,146 @@
+[
+  {
+    "name": "raw idea generates topics",
+    "stage": "raw_idea",
+    "expected": {
+      "skill": "topic-master",
+      "next_stage": "topics_generated",
+      "blocked": false
+    }
+  },
+  {
+    "name": "topic choice can be made within authorized goal",
+    "stage": "topics_generated",
+    "expected": {
+      "skill": "topic-master",
+      "next_stage": "checked_in",
+      "blocked": false
+    }
+  },
+  {
+    "name": "standard checked in can plan or acquire needed research",
+    "stage": "checked_in",
+    "workflow_mode": "standard",
+    "content_form": "article",
+    "expected": {
+      "skill": "viral-content-strategist",
+      "next_stage": "strategies_generated",
+      "blocked": false
+    }
+  },
+  {
+    "name": "quick checked in can draft",
+    "stage": "checked_in",
+    "workflow_mode": "quick",
+    "content_form": "short_post",
+    "recommended_path": "short_post_first",
+    "expected": {
+      "skill": "story-writer",
+      "next_stage": "drafted",
+      "blocked": false
+    }
+  },
+  {
+    "name": "market research proceeds to planning",
+    "stage": "market_researched",
+    "expected": {
+      "skill": "viral-content-strategist",
+      "next_stage": "strategies_generated",
+      "blocked": false
+    }
+  },
+  {
+    "name": "strategy can be finalized without redundant approval",
+    "stage": "strategies_generated",
+    "expected": {
+      "skill": "viral-content-strategist",
+      "next_stage": "planned",
+      "blocked": false
+    }
+  },
+  {
+    "name": "planned evidence collection is actionable: tutorial",
+    "stage": "planned",
+    "recommended_path": "tutorial",
+    "expected": {
+      "skill": "viral-content-strategist",
+      "next_stage": "planned",
+      "blocked": false,
+      "target_stage": "assets_ready"
+    },
+    "reason_contains": "至少 3 张关键截图"
+  },
+  {
+    "name": "planned evidence collection is actionable: opinion",
+    "stage": "planned",
+    "recommended_path": "opinion",
+    "expected": {
+      "skill": "viral-content-strategist",
+      "next_stage": "planned",
+      "blocked": false,
+      "target_stage": "assets_ready"
+    },
+    "reason_contains": "核验"
+  },
+  {
+    "name": "assets ready can draft",
+    "stage": "assets_ready",
+    "expected": {
+      "skill": "story-writer",
+      "next_stage": "drafted",
+      "blocked": false
+    }
+  },
+  {
+    "name": "drafted generates title candidates but keeps actual stage",
+    "stage": "drafted",
+    "file_text": "## 写作笔记\n\n### 风格自检\n\n- 风格档案是否已读取：是\n- 自检结论：像\n",
+    "expected": {
+      "skill": "title-master",
+      "next_stage": "drafted",
+      "target_stage": "titled",
+      "blocked": false
+    }
+  },
+  {
+    "name": "generated candidates can be evaluated for authorized selection",
+    "stage": "drafted",
+    "file_text": "## 写作笔记\n\n### 风格自检\n\n- 风格档案是否已读取：是\n- 自检结论：像\n\n## 标题备选\n\n- XHS-001 候选一\n- XHS-002 候选二\n- XHS-003 候选三\n- XHS-004 候选四\n",
+    "expected": {
+      "skill": "title-master",
+      "next_stage": "titled",
+      "target_stage": "titled",
+      "blocked": false
+    },
+    "reason_contains": "用户保留终选权时等待"
+  },
+  {
+    "name": "titled proceeds to review",
+    "stage": "titled",
+    "file_text": "## 写作笔记\n\n### 风格自检\n\n- 风格档案是否已读取：是\n- 自检结论：像\n",
+    "expected": {
+      "skill": "content-reviewer",
+      "next_stage": "reviewed",
+      "blocked": false
+    }
+  },
+  {
+    "name": "reviewed waits for publication confirmation",
+    "stage": "reviewed",
+    "expected": {
+      "skill": "scripts/publish-content.py",
+      "next_stage": "published",
+      "blocked": true
+    }
+  },
+  {
+    "name": "unknown stage stays blocked",
+    "stage": "unknown",
+    "expected": {
+      "skill": "",
+      "next_stage": "",
+      "blocked": true
+    },
+    "reason_contains": "没有登记下一步"
+  }
+]

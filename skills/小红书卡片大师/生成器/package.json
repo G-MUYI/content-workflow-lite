@@ -1,0 +1,14 @@
+{
+  "name": "xiaohongshu-card-generator",
+  "version": "2.0.0",
+  "description": "小红书卡片图片生成器 (Nano Component Edition)",
+  "main": "generate-nano.js",
+  "scripts": {
+    "generate": "node generate-nano.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.0.0"
+  },
+  "author": "YY",
+  "license": "MIT"
+}

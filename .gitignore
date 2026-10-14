@@ -1,0 +1,69 @@
+# 依赖
+node_modules/
+
+# 构建产物
+视频生成器/build/
+视频生成器/dist/
+视频生成器/out/
+video-generator/build/
+skills/小红书卡片大师/output/
+
+# 环境变量
+.env
+
+# Claude Code 本地配置
+.claude/
+
+# 系统文件
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# 运行时缓存
+.pytest_cache/
+docs/.cache/
+scripts/__pycache__/
+__pycache__/
+
+# 构建产物
+video-generator/build/
+
+# 编辑器
+.vscode/
+*.swp
+*.swo
+.gstack/
+
+# 本地运行时状态
+.context/codex-session-id
+
+# 本地个人档案（由初始化命令生成，始终保持忽略）
+skills/_通用/会话记忆.md
+skills/_通用/用户偏好.md
+skills/_通用/创作者定位.md
+skills/_通用/风格档案/我的风格.md
+skills/_通用/风格档案/反馈记录.md
+
+# 个人内容与业务数据
+选题库/_inbox/
+选题库/待写/
+选题库/进行中/
+选题库/已发布/
+选题库/已弃用/
+素材库/提示词/_inbox/
+素材库/提示词/已整理/
+素材库/金句/
+数据统计/*.md
+!数据统计/复盘记录-模板.md
+
+# 目录骨架占位文件必须入库
+!选题库/**/.gitkeep
+!素材库/**/.gitkeep
+!数据统计/每日来源评分/.gitkeep
+
+# 个人风格原文样本（保留公开目录说明）
+skills/_通用/风格档案/参考样本/*
+!skills/_通用/风格档案/参考样本/README.md
+!skills/_通用/风格档案/参考样本/待核实/
+skills/_通用/风格档案/参考样本/待核实/*
+!skills/_通用/风格档案/参考样本/待核实/README.md
